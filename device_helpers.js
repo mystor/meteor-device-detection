@@ -17,6 +17,9 @@ if (typeof Handlebars !== 'undefined') {
 
     var device_name = name + (suffix || '');
 
+    console.log(name);
+    console.log(device_name);
+
     if (Template[device_name]) {
       // Try to load the suffixed template
       return new Handlebars.SafeString(Template[device_name]());
@@ -35,5 +38,5 @@ if (typeof Handlebars !== 'undefined') {
   Handlebars.registerHelper('isDesktop', Meteor.Device.isDesktop);
   Handlebars.registerHelper('isBot', Meteor.Device.isBot);
 
-  Handlebars.registerHelper('device_type', Meteor.device.type);
+  Handlebars.registerHelper('device_type', Meteor.Device.type);
 }

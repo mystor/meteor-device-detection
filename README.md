@@ -46,7 +46,7 @@ If you are using Handlebars for templating, then they are also avaliable as hand
 
 ### Detection Options
 
-Meteor Device-Detection is based off of [express-device](https://github.com/rguerreiro/express-device), this means that it supports the same customization options.
+Meteor Device-Detection is based off of [express-device](https://github.com/rguerreiro/express-device), this means that it supports some of the same customization options.
 
 You can set the following values in Javascript and then call `Meteor.Device.detectDevice();` to redetect the current device.
 
