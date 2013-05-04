@@ -18,7 +18,7 @@ if (typeof Handlebars !== 'undefined') {
 
       // Only render mobile template if it exists, otherwise fall back
       if (Template[mobile_name])
-        return new Handlebars.SafeStrong(Template[mobile_name]());
+        return new Handlebars.SafeString(Template[mobile_name]());
     }
 
     if (Template[name])
