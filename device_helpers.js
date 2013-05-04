@@ -35,5 +35,5 @@ if (typeof Handlebars !== 'undefined') {
   Handlebars.registerHelper('isDesktop', Meteor.Device.isDesktop);
   Handlebars.registerHelper('isBot', Meteor.Device.isBot);
 
-  Handlebars.registerHelper('device_type', Meteor.device.type);
+  Handlebars.registerHelper('device_type', Meteor.Device.type);
 }

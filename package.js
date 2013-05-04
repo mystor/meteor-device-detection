@@ -5,5 +5,5 @@ Package.describe({
 Package.on_use(function (api) {
   api.use('underscore', 'client');
 
-  api.add_files(['device_helpers.js', 'device_detection.js'], 'client');
+  api.add_files(['device_detection.js', 'device_helpers.js'], 'client');
 });
