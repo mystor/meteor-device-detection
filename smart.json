@@ -1,6 +1,6 @@
 {
   "name": "mobile-detection",
-  "description": "Client-side mobile detection and template swapping with meteor-router integration",
+  "description": "Client-Side Device Type Detection & Template Switching with Optional Meteor-Router Support",
   "homepage": "https://github.com/mystor/meteor-mobile-detection/",
   "author": "Michael Layzell",
   "version": "0.1",
