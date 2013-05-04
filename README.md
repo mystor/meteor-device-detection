@@ -89,7 +89,7 @@ Device-Detection provides a simple way to avoid ugly `{{#if isPhone}} ... {{/if}
 
 If you call the device render helper with a parameter (the parameter being the name of the template), the helper will first search for, and then render, a template with that name, as well as a suffix (`_tv` for TV, `_tablet` for Tablet, `_phone` for Phone, `_desktop` for Desktop, and `_bot` for a Bot).  If it cannot find that template it will instead render the template name without any suffix as a fallback.
 
-``` handlebars
+``` html
 <template name="body">
   <!-- This template will render the following
 	tv:      the template "page"
