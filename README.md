@@ -41,7 +41,7 @@ Or, if you want to load a specific template by name, and the mobile version othe
 {{renderMobile 'template_name'}}
 ```
 
-The mobile version of the template is, by default, the template name followed by `-mobile`.  This can be customized by setting the `Meteor.Mobile.mobileSuffix` variable:
+The mobile version of the template is, by default, the template name followed by `-mobile`.  The `renderMobile` helper will fall back to the desktop version if the mobile template doesn't exist.  This can be customized by setting the `Meteor.Mobile.mobileSuffix` variable:
 
 ``` javascript
 Meteor.Mobile.mobileSuffix = '-m';

@@ -1,6 +1,6 @@
 if (typeof Handlebars !== 'undefined') {
   Handlebars.registerHelper('isMobile', function() {
-    return Meteor.Mobile.isMobile();
+    return Meteor.Mobile.isMobile;
   });
 
   Handlebars.registerHelper('renderMobile', function(name, options) {
@@ -13,8 +13,13 @@ if (typeof Handlebars !== 'undefined') {
       }
     }
 
-    if (Meteor.Mobile.isMobile())
-      name += Meteor.Mobile.mobileSuffix || '';
+    if (Meteor.Mobile.isMobile) {
+      var mobile_name = name + (Meteor.Mobile.mobileSuffix || '');
+
+      // Only render mobile template if it exists, otherwise fall back
+      if (Template[mobile_name])
+        return new Handlebars.SafeStrong(Template[mobile_name]());
+    }
 
     if (Template[name])
       return new Handlebars.SafeString(Template[name]());
