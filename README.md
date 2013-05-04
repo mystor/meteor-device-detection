@@ -9,7 +9,7 @@ Until Meteor Device-Detection is uploaded to the [Atmosphere](http://atmosphere.
 ``` sh
 $ mkdir packages
 $ cd packages
-$ git clone https://github.com/mystor/meteor-device-detection.git device-detection
+$ git clone https://github.com/Mystor/meteor-device-detection.git device-detection
 ```
 
 Once Meteor Device-Detection is on Atmosphere, Meteor Device-Detection will be installable with [Meteorite](https://github.com/oortcloud/meteorite/).
