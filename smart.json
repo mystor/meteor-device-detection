@@ -3,6 +3,6 @@
   "description": "Client-Side Device Type Detection & Template Switching with Optional Meteor-Router Support",
   "homepage": "https://github.com/mystor/meteor-device-detection/",
   "author": "Michael Layzell",
-  "version": "0.1",
+  "version": "0.1.0",
   "git": "https://github.com/mystor/meteor-device-detection.git"
 }
