@@ -29,11 +29,23 @@ if (typeof Handlebars !== 'undefined') {
   /*
    * Device Type Helpers
    */
-  Handlebars.registerHelper('isTV', Meteor.Device.isTV);
-  Handlebars.registerHelper('isTablet', Meteor.Device.isTablet);
-  Handlebars.registerHelper('isPhone', Meteor.Device.isPhone);
-  Handlebars.registerHelper('isDesktop', Meteor.Device.isDesktop);
-  Handlebars.registerHelper('isBot', Meteor.Device.isBot);
+  Handlebars.registerHelper('isTV', function() {
+    Meteor.Device.isTV();
+  });
+  Handlebars.registerHelper('isTablet', function() {
+    Meteor.Device.isTablet();
+  });
+  Handlebars.registerHelper('isPhone', function() {
+    return Meteor.Device.isPhone();
+  });
+  Handlebars.registerHelper('isDesktop', function() {
+    return Meteor.Device.isDesktop();
+  });
+  Handlebars.registerHelper('isBot', function() {
+    return Meteor.Device.isBot();
+  });
 
-  Handlebars.registerHelper('device_type', Meteor.Device.type);
+  Handlebars.registerHelper('device_type', function() {
+    return Meteor.Device.type();
+  });
 }
