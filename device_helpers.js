@@ -30,10 +30,10 @@ if (typeof Handlebars !== 'undefined') {
    * Device Type Helpers
    */
   Handlebars.registerHelper('isTV', function() {
-    Meteor.Device.isTV();
+    return Meteor.Device.isTV();
   });
   Handlebars.registerHelper('isTablet', function() {
-    Meteor.Device.isTablet();
+    return Meteor.Device.isTablet();
   });
   Handlebars.registerHelper('isPhone', function() {
     return Meteor.Device.isPhone();
