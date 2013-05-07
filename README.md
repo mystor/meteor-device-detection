@@ -6,15 +6,7 @@ An example which uses this package can be found [on github](https://github.com/M
 
 ## Installation
 
-Until Meteor Device-Detection is uploaded to the [Atmosphere](http://atmosphere.meteor.com/) repository, you can install it by copying this directory into the `packages` directory of your Meteor project.  You may have to create this directory.
-
-``` sh
-$ mkdir packages
-$ cd packages
-$ git clone https://github.com/Mystor/meteor-device-detection.git device-detection
-```
-
-Once Meteor Device-Detection is on Atmosphere, Meteor Device-Detection will be installable with [Meteorite](https://github.com/oortcloud/meteorite/).
+Device-Detection is on [Atmosphere](http://atmosphere.meteor.com/), so you can install it very easily with [Meteorite](https://github.com/oortcloud/meteorite/).
 
 ``` sh
 $ mrt add device-detection
