@@ -3,6 +3,7 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
+  api.use('standard-app-packages');
   api.use(['underscore', 'deps', 'session', 'handlebars'], 'client');
 
   api.add_files(['device_detection.js', 'device_helpers.js'], 'client');
