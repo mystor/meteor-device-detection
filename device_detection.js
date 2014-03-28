@@ -234,3 +234,4 @@
   Meteor.Device = new Device;
   Meteor.Device.detectDevice();
 })();
+

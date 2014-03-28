@@ -12,6 +12,8 @@ Device-Detection is on [Atmosphere](http://atmosphere.meteor.com/), so you can i
 $ mrt add device-detection
 ```
 
+> NOTE: Device-Detection has been updated to support 0.8.0 and Blaze. It's helpers will no longer function correctly on older versions of Meteor running Spark.
+
 ## Usage
 
 ### Detecting Devices
@@ -79,7 +81,7 @@ Meteor.Device.hasPreference();
 
 A common use case for device detection is to serve a different user experience to the user based on what their device type is.  This will often involve different templates to be displayed to the user.
 
-Device-Detection provides a simple way to avoid ugly `{{#if isPhone}} ... {{/if}}` statements in your code, by using the `{{deviceRender}}` helper!  
+Device-Detection provides a simple way to avoid ugly `{{#if isPhone}} ... {{/if}}` statements in your code, by using the `{{> deviceRender}}` helper!  
 
 If you call the device render helper with a parameter (the parameter being the name of the template), the helper will first search for, and then render, a template with that name, as well as a suffix (`_tv` for TV, `_tablet` for Tablet, `_phone` for Phone, `_desktop` for Desktop, and `_bot` for a Bot).  If it cannot find that template it will instead render the template name without any suffix as a fallback.
 
@@ -92,7 +94,7 @@ If you call the device render helper with a parameter (the parameter being the n
 	desktop: the template "page"
 	bot:     the template "page"
   -->
-  {{deviceRender 'page'}}
+  {{> deviceRender 'page'}}
 </template>
 
 <template name="page">
@@ -116,7 +118,7 @@ Meteor.Device.setBotSuffix('_bot');
 
 #### Meteor-Router Integration
 
-If you are using [meteor-router](https://github.com/tmeasday/meteor-router/), you can also call `{{deviceRender}}` with no parameters.  If you do this, deviceRouter will default to using `Meteor.Router.page()` as the template name.
+If you are using [meteor-router](https://github.com/tmeasday/meteor-router/), you can also call `{{> deviceRender}}` with no parameters.  If you do this, deviceRouter will default to using `Meteor.Router.page()` as the template name.
 
 ## Contributing
 

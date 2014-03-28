@@ -1,8 +1,9 @@
-if (typeof Handlebars !== 'undefined') {
+if (typeof UI !== 'undefined') {
   /*
    * Template Rendering Shortcut
    */
-  Handlebars.registerHelper('deviceRender', function(name, options) {
+  UI.registerHelper('deviceRender', function() {
+    var name = this;
     if (! _.isString(name)) {
       // If meteor-router is installed, no passed name will load Meteor.Router.page()
       if (typeof Meteor.Router !== 'undefined') {
@@ -19,33 +20,37 @@ if (typeof Handlebars !== 'undefined') {
 
     if (Template[device_name]) {
       // Try to load the suffixed template
-      return new Handlebars.SafeString(Template[device_name]());
+      return Template[device_name];
     } else if (Template[name]) {
       // Fallback to unsuffixed template if suffixed template doesn't exist
-      return new Handlebars.SafeString(Template[name]());
+      return Template[name];
+    } else {
+      // Blaze gets grumpy if you return undefined
+      return null;
     }
   });
   
   /*
    * Device Type Helpers
    */
-  Handlebars.registerHelper('isTV', function() {
+  UI.registerHelper('isTV', function() {
     return Meteor.Device.isTV();
   });
-  Handlebars.registerHelper('isTablet', function() {
+  UI.registerHelper('isTablet', function() {
     return Meteor.Device.isTablet();
   });
-  Handlebars.registerHelper('isPhone', function() {
+  UI.registerHelper('isPhone', function() {
     return Meteor.Device.isPhone();
   });
-  Handlebars.registerHelper('isDesktop', function() {
+  UI.registerHelper('isDesktop', function() {
     return Meteor.Device.isDesktop();
   });
-  Handlebars.registerHelper('isBot', function() {
+  UI.registerHelper('isBot', function() {
     return Meteor.Device.isBot();
   });
 
-  Handlebars.registerHelper('device_type', function() {
+  UI.registerHelper('device_type', function() {
     return Meteor.Device.type();
   });
 }
+
