@@ -1,7 +1,7 @@
 Package.describe({
   name: "mystor:device-detection",
-  summary: "Client-Side Device Type Detection & Template Switching with Optional Meteor-Router Support",
-  version: "0.2.0",
+  summary: "Client-Side Device Type Detection & Template Switching with Optional Meteor-Router and IronRouter support",
+  version: "0.2.1",
   git: "https://github.com/mystor/meteor-device-detection.git"
 });
 
