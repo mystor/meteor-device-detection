@@ -10,7 +10,8 @@ if (typeof UI !== 'undefined') {
       if (typeof Meteor.Router !== 'undefined') {
         name = Meteor.Router.page();
       } else if (typeof Router !== 'undefined') {
-        name = Router.current().route.options.template;
+        var opts = Router.current().route.options;
+        name = opts.template || opts.name || Router.current().route.path().slice(1);
       } else {
         name = '';
       }
