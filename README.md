@@ -9,7 +9,7 @@ An example which uses this package can be found [on github](https://github.com/M
 Device-Detection is on [Atmosphere](http://atmosphere.meteor.com/), so you can install it very easily with [Meteorite](https://github.com/oortcloud/meteorite/).
 
 ``` sh
-$ mrt add device-detection
+$ meteor add mystor:device-detection
 ```
 
 > NOTE: Device-Detection has been updated to support 0.8.0 and Blaze. It's helpers will no longer function correctly on older versions of Meteor running Spark.
