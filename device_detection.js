@@ -9,7 +9,8 @@
       tablet: new Deps.Dependency,
       phone: new Deps.Dependency,
       desktop: new Deps.Dependency,
-      bot: new Deps.Dependency
+      bot: new Deps.Dependency,
+      chromecast: new Deps.Dependency
     }
 
     this._suffix = {
@@ -17,7 +18,8 @@
       tablet: '_tablet',
       phone: '_phone',
       desktop: '_desktop',
-      bot: '_bot'
+      bot: '_bot',
+      chromecast: '_chromecast'
     }
 
     this.emptyUserAgentDeviceType = 'desktop';
@@ -56,6 +58,10 @@
     this.setSuffix('bot', suffix);
   }
 
+  Device.prototype.setChromecastSuffix = function(suffix) {
+    this.setSuffix('chromecast', suffix);
+  }
+
   /*
    * Getting Suffixes
    */
@@ -83,6 +89,10 @@
 
   Device.prototype.BotSuffix = function() {
     return getSuffix('bot');
+  }
+
+  Device.prototype.ChromecastSuffix = function() {
+    return getSuffix('chromecast');
   }
 
   /*
@@ -124,6 +134,10 @@
     this.setPreference('bot');
   }
 
+  Device.prototype.preferChromecast = function() {
+    this.setPreference('chromecast');
+  }
+
   /*
    * Getting Type
    */
@@ -155,6 +169,10 @@
 
   Device.prototype.isBot = function() {
     return this.isType('bot');
+  };
+
+  Device.prototype.isChromecast = function() {
+    return this.isType('chromecast');
   };
 
   /*
@@ -209,9 +227,12 @@
       } else if (ua.match(/Macintosh|PowerPC/i) && !ua.match(/Silk/i)) {
         // if agent is Mac Desktop
         return 'desktop';
-      } else if (ua.match(/Linux/i) && ua.match(/X11/i) && !ua.match(/Charlotte/i)) {
+      } else if (ua.match(/Linux/i) && ua.match(/X11/i) && !ua.match(/Charlotte/i) && !ua.match(/CrKey/i)) {
         // if user agent is a Linux Desktop
         return 'desktop';
+      } else if (ua.match(/Linux/i) && ua.match(/X11/i) && !ua.match(/Charlotte/i) && ua.match(/CrKey/i)) {
+        // if user agent is a Linux Desktop
+        return 'chromecast';
       } else if (ua.match(/CrOS/)) {
         // if user agent is a Chrome Book
         return 'desktop';

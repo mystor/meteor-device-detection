@@ -48,6 +48,9 @@ if (typeof UI !== 'undefined') {
   UI.registerHelper('isBot', function() {
     return Meteor.Device.isBot();
   });
+  UI.registerHelper('isChromecast', function() {
+    return Meteor.Device.isChromecast();
+  });
 
   UI.registerHelper('device_type', function() {
     return Meteor.Device.type();
