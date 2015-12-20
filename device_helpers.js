@@ -6,8 +6,12 @@ if (typeof UI !== 'undefined') {
     var name = this;
     if (! _.isString(name)) {
       // If meteor-router is installed, no passed name will load Meteor.Router.page()
+      // or if IronRouter is used, use that instead for the template name.
       if (typeof Meteor.Router !== 'undefined') {
         name = Meteor.Router.page();
+      } else if (typeof Router !== 'undefined') {
+        var opts = Router.current().route.options;
+        name = opts.template || opts.name || Router.current().route.path().slice(1);
       } else {
         name = '';
       }
