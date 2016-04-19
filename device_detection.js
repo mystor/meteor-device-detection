@@ -185,7 +185,7 @@
       } else if (ua.match(/Xbox|PLAYSTATION 3|Wii/i)) {
         // if user agent is a TV Based Gaming Console
         return 'tv';
-      } else if (ua.match(/iP(a|ro)d/i) || (ua.match(/tablet/i) && !ua.match(/RX-34/i)) || ua.match(/FOLIO/i)) {
+      } else if (ua.match(/iP(a|ro)d/i) || (ua.match(/tablet/i) && !ua.match(/RX-34/i) && !ua.match(/Tablet PC \d.\d/i)) || ua.match(/FOLIO/i)) {
         // if user agent is a Tablet
         return 'tablet';
       } else if (ua.match(/Linux/i) && ua.match(/Android/i) && !ua.match(/Fennec|mobi|HTC Magic|HTCX06HT|Nexus One|SC-02B|fone 945/i)) {
